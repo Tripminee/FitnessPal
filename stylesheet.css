@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bonbon&display=swap');
+:root {
+    --primary-color: #80ed99;
+    --second-color: orange;
+    --focus-color: rgba(195, 218, 195, 0.5);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #212529;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.projectName-container {
+    align-self: center;
+}
+
+h1 {
+    align-self: center;
+    font-size: 2.5rem;
+    color: white;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logIn {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 auto;
+    gap: 25px;
+}
+
+.login-detail {
+    align-self: center;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.logIn input {
+    border-radius: 25px;
+    height: 2.5rem;
+    width: 25vw;
+    align-self: center;
+    text-align: center;
+    background-color: white;
+    transition: transform 0.2s ease-in-out;
+}
+
+.logIn input:focus {
+    background-color: rgba(195, 218, 195, 0.5);
+    color: white;
+    border: 0px;
+    outline: none;
+    transform: scale(1.2);
+}
+
+.logIn input:focus::placeholder {
+    color: white;
+}
+
+.logIn input:invalid {
+    border: 1px solid var(--primary-color);
+    background-color: lightcoral;
+}
+
+.logIn input:required:valid {
+    border: 1px solid var(--primary-color);
+    background-color: lightgreen;
+}
+
+.submit-logIn {
+    border-radius: 25px;
+    height: 2rem;
+    background-color: white;
+    width: 25vw;
+    align-self: center;
+    transition: transform 0.3s ease-in-out;
+    font-weight: bold;
+}
+
+.submit-logIn:hover {
+    transition: ease 0.5s;
+    font-size: 1.1rem;
+    transform: scale(1.2);
+    background-color: var(--second-color);
+}
+
+.submit-logIn:focus {
+    background-color: var(--primary-color);
+}

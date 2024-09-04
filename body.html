@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="main.js" defer></script>
+    <title>Test Form</title>
+</head>
+<body>
+    <header>
+        <div class="projectName-container">
+            <h1 class="projectName">Nutritional record</h1>
+        </div>
+        <img src="/Image/Logo.png" alt="Logo" class="logo" width="400px">
+    </header>
+    <div class="container">
+        <form action="" class="logIn" id="logIn">
+            <label for="phone" class="login-detail">Use Your Phone Number to Login</label>
+            <input type="tel" id="phone" name="phone" placeholder="เบอร์โทรศัพ" pattern="[0-9]{10}" required>
+            <input type="password" id="password" name="password" placeholder="พาสเวิร์ด" pattern=".{8,}" required>
+            <button type="submit" class="submit-logIn">LogIn</button>
+        </form>
+    </div>
+</body>
+</html>
