@@ -13,27 +13,30 @@ document.getElementById('logIn').addEventListener('submit', function(event) {
     const date = new Date().toLocaleDateString();
     const time = new Date().toLocaleTimeString();
 
-    // ส่งข้อมูลไปยัง Google Script
-    fetch('https://script.google.com/macros/s/AKfycbzEEGxlbYemLkmOGnYZnrLqN9JkrfAlUgiMRKgHy-k3S4xMKTOP6yBNnqagcVJokDeHVQ/exec', {
+    fetch('https://us-central1-system-lean-structure.cloudfunctions.net/FitnessPal_login', {
         method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
         body: JSON.stringify({
             phone: phone,
             password: password,
             date: date,
             time: time
-        }),
-        headers: {
-            'Content-Type': 'application/json'
-        }
+        })
     })
     .then(response => response.json())
     .then(data => {
         console.log('Success:', data);
-        alert("Login successful!"); // แจ้งเตือนเมื่อเข้าสู่ระบบสำเร็จ
+        if (data.result === "success") {
+            alert("เริ่มบันทึกสารอาหารกัน");
+        } else {
+            alert("เบอร์โทรศัพ หรือ รหัสผิดพลาด ลองใหม่อีกครั้ง");
+        }
     })
     .catch(error => {
         console.error('Error:', error);
-        alert("Login failed. Please try again."); // แจ้งเตือนเมื่อเกิดข้อผิดพลาด
+        alert("เกิดข้อผิดพลาดบางอย่าง ลองใหม่อีกครั้ง");
     });
 });
 
